@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head";
+import Header01 from '../components/header/Header01';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +16,11 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Head>
-        <meta name="description" content="Empty Nibi JS Template App" />
-      </Head>
-      <main className={inter.className}>{children}</main>
-    </>
+    <div className={`${inter.className} min-h-screen flex flex-col p-4 `}>
+      <Header01 />
+      <main className="flex-grow">
+          {children}
+      </main>
+    </div>
   );
 }

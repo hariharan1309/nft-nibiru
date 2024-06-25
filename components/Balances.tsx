@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useChain } from "@cosmos-kit/react";
 import { chain } from "../config";
+import { useNibiruClient } from '../context';
 import { NibiruQuerier, NibiruTxClient } from "@nibiruchain/nibijs";
 import { coin, coins } from "@cosmjs/proto-signing";
 import { SigningStargateClient } from "@cosmjs/stargate";
@@ -94,6 +95,10 @@ const Balances: React.FC = () => {
       setError(`Failed to send funds: ${err instanceof Error ? err.message : String(err)}`);
     }
   };
+
+  async function getContract(){
+    
+  }
 
   const fetchBlockInfo = async () => {
     try {

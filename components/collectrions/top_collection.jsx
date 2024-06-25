@@ -51,14 +51,7 @@ const Top_collection = () => {
 
   return (
     <div>
-      <section className="dark:bg-jacarta-800 relative py-24">
-        <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
-          <img
-            src="/images/gradient_light.jpg"
-            alt="gradient"
-            className="h-full w-full"
-          />
-        </picture>
+      <section className="bg-gradient-to-br from-blue-500 via-purple-500 to-violet-500 relative py-24">
         <div className="container">
           <div className="font-display text-jacarta-700 mb-12 text-center text-lg sm:text-3xl dark:text-white flex justify-center items-center gap-x-3">
             <HeadLine text="Top collections over" classes="inline" />
@@ -85,8 +78,8 @@ const Top_collection = () => {
               <div
                 className={
                   dropdownShow
-                    ? "dropdown-menu dark:bg-jacarta-800 z-10  min-w-[200px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl show text-jacarta-700 dark:text-white absolute m-0 top-full"
-                    : "dropdown-menu dark:bg-jacarta-800 z-10  min-w-[200px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl hidden text-jacarta-700 dark:text-white absolute m-0 top-full"
+                    ? "dropdown-menu  z-10  min-w-[200px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl show text-jacarta-700 dark:text-white absolute m-0 top-full"
+                    : "dropdown-menu  z-10  min-w-[200px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl hidden text-jacarta-700 dark:text-white absolute m-0 top-full"
                 }
               >
                 {timeText.map(({ id, text }) => {

@@ -9,17 +9,18 @@ import {
 import Meta from "../components/Meta";
 import Hero_4 from "../components/hero_4";
 import CoverflowCarousel from "../components/coverflowCarousel";
-
+import Header01 from "../components/header/Header01";
+import Footer from '../components/footer'
 const Home_4 = () => {
   return (
     <>
+      <Header01 />
       <Hero_4 />
       <CoverflowCarousel />
       <Top_collection />
-      <Auctions_categories />
-      <NewseLatter bgWhite={true} />
+
       <Feature_collections />
-      <Partners />
+      <Footer />
     </>
   );
 };

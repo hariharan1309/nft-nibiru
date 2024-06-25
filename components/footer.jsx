@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { footerMenuList, socialIcons } from "../data/footer_data";
 
-const footer = () => {
+const Footer = () => {
   return (
     <>
       {/* <!-- Footer --> */}
@@ -116,4 +116,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

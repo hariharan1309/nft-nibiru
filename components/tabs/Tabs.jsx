@@ -23,16 +23,6 @@ const ItemsTabs = () => {
       text: "details",
       icon: "details",
     },
-    {
-      id: 4,
-      text: "activities",
-      icon: "activity",
-    },
-    {
-      id: 5,
-      text: "price history",
-      icon: "price",
-    },
   ];
   return (
     <>
@@ -116,12 +106,6 @@ const ItemsTabs = () => {
                 </div>
               </div>
             </div>
-          </TabPanel>
-          <TabPanel>
-            <Activity_tab />
-          </TabPanel>
-          <TabPanel>
-            <Price_history classes="dark:bg-jacarta-700 dark:border-jacarta-600 border-jacarta-100 rounded-t-2lg rounded-b-2lg rounded-tl-none border bg-white p-6" />
           </TabPanel>
         </Tabs>
       </div>

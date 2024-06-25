@@ -12,6 +12,8 @@ import Layout from "../layouts";
 import { Metadata } from "next";
 import { AssetsList, ChainSchema } from "../config";
 import { NibiruClientProvider } from "../context";
+import { MetaMaskProvider } from "metamask-react";
+import Header01 from "../components/header/Header01";
 
 export const metadata: Metadata = {
   title: "Nibiru | Template App",
@@ -46,14 +48,16 @@ function App({ Component, pageProps }: AppProps) {
       // @ts-ignore
       signerOptions={signerOptions}
     >
+      <MetaMaskProvider>
       <NibiruClientProvider>
       <Provider store={store}>
-
         <Layout>
-          <Component {...pageProps} />
-        </Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </NibiruClientProvider>
+      </MetaMaskProvider>
+
     </ChainProvider>
   );
 }

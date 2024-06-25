@@ -1,4 +1,3 @@
-import Hero from "../pages/home/home";
 import Bids from "./bids/bids.jsx";
 import Top_collection from "./collectrions/top_collection.jsx";
 import Tranding_category from "./categories/tranding_categories.jsx";
@@ -11,7 +10,6 @@ import Browse_category from "./categories/Browse_category.jsx";
 import ItemsTabs from "./tabs/Tabs.jsx";
 
 export {
-  Hero,
   Bids,
   Top_collection,
   Tranding_category,

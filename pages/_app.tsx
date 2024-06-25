@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@interchain-ui/react/styles";
-
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 import type { AppProps } from "next/app";
 import { SignerOptions, wallets } from "cosmos-kit";
 import { ChainProvider } from "@cosmos-kit/react";
@@ -46,9 +47,12 @@ function App({ Component, pageProps }: AppProps) {
       signerOptions={signerOptions}
     >
       <NibiruClientProvider>
+      <Provider store={store}>
+
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        </Provider>
       </NibiruClientProvider>
     </ChainProvider>
   );

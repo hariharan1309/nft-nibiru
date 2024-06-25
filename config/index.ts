@@ -1,7 +1,7 @@
 import { Chain, AssetList } from "@chain-registry/types";
 import { Testnet } from "@nibiruchain/nibijs";
 
-export const chain = Testnet(1);
+export const chain = Testnet(2);
 
 const GAS_MULT = 5;
 

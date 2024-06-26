@@ -10,34 +10,37 @@ interface MintCommandParams {
   attributes: { trait_type: string; value: string }[];
 }
 
-export function mintNft(params: MintCommandParams): void {
+export function mintNft(params: MintCommandParams): Promise<string> {
   const { contractAddress, account, token_id, token_uri , name, description, attributes} = params;
-  const mint  = {
+  const mint  = `{
     "mint": {
-      "token_id": token_id,
+      "token_id": "${token_id}",
       "owner": "nibi197gw9qcxfnvypn3dwqwys2jptgyrl5zksfz86a",
-      "token_uri": token_uri,
+      "token_uri": "${token_uri}",
       "extension": {
-        "name": name,
-        "description": description,
-        "attributes": attributes
+        "name": "${name}",
+        "description": "${description}",
+        "attributes": ${JSON.stringify(attributes)}
       }
     }
-}
+}`
   const command = `nibid tx wasm execute ${contractAddress} '${mint}' --from ${account} --gas auto --gas-adjustment 1.5 --gas-prices 0.025unibi`;
-
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error executing command: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`stdout: ${stdout}`);
-    return stdout
+  return new Promise((resolve, reject) => {
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+        console.error(`Error executing command: ${error.message}`);
+        return;
+        }
+        if (stderr) {
+        console.error(`stderr: ${stderr}`);
+        return;
+        }
+        console.log(`stdout: ${stdout}`);
+        resolve( `${stdout}`);
+    // return stdout
   });
+});
+
 }
 
 interface ApproveCommandParams {
@@ -47,27 +50,30 @@ interface ApproveCommandParams {
     token_id: string;
 }
 
-export function approve(params: ApproveCommandParams): void {
+export function approve(params: ApproveCommandParams): Promise<string> {
     const {spender, contractAddress, account, token_id} = params;
-    const approve  = {
+    const approve  = `{
         "approve": {
-            "spender": spender,
-            "token_id": token_id
+            "spender": "${spender}",
+            "token_id": "${token_id}"
         }
-    }
+    }`
     const command = `nibid tx wasm execute ${contractAddress} '${approve}' --from ${account} --gas auto --gas-adjustment 1.5 --gas-prices 0.025unibi`;
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error executing command: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        return stdout
-    });
+    return new Promise((resolve, reject) => {
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing command: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            resolve( `${stdout}`);
+        });
+    })
+   
 }
 
 interface ListNFTParams {
@@ -87,28 +93,31 @@ interface ListNFTParams {
     };
 }
 
-export function list_nft(params: ListNFTParams): void {
+export function list_nft(params: ListNFTParams): Promise<string> {
     const {contractAddress,collectionAddress, account, token_id, auction_config} = params;
-    const list_nft  = {
+    const list_nft  = `{
         "list_nft": {
-            "contract_address": collectionAddress,
-            "token_id": token_id,
-            "auction_config": auction_config
+            "contract_address": "${collectionAddress}",
+            "token_id": "${token_id}",
+            "auction_config": ${JSON.stringify(auction_config)}
         }
-    }
+    }`
     const command = `nibid tx wasm execute ${contractAddress} '${list_nft}' --from ${account} --gas auto --gas-adjustment 1.5 --gas-prices 0.025unibi`;
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error executing command: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        return stdout
-    });
+    return new Promise((resolve, reject) => {
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing command: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            resolve( `${stdout}`);
+        });
+    })
+    
 }
 
 
@@ -117,26 +126,29 @@ interface ListingNftParams {
     collectionAddress: string;
 }
 
-export function listing_nft(params: ListingNftParams): void {
+export function listing_nft(params: ListingNftParams): Promise<string> {
     const {contractAddress, collectionAddress} = params;
-    const listing_nft  = {
-        "listing_nft": {
-            "contract_address": collectionAddress
+    const listing_nft  = `{
+        "listings_by_contract_address": {
+            "contract_address": "${collectionAddress}"
         }
-    }
+    }`
     const command = `nibid query wasm contract-state smart ${contractAddress} '${listing_nft}' `;
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error executing command: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        return stdout
-    });
+    return new Promise((resolve, reject) => {
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing command: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            resolve( `${stdout}`);
+        });
+    })
+    
 }
 
 interface BuyNftParams {
@@ -146,26 +158,29 @@ interface BuyNftParams {
     collectionAddress: string;
 }
 
-export function buy_nft(params: BuyNftParams): void {
+export function buy_nft(params: BuyNftParams): Promise<string> {
     const {contractAddress, account, token_id, collectionAddress} = params;
-    const buy_nft  = {
+    const buy_nft  = `{
         "buy": {
-            "contract_address": collectionAddress,
-            "token_id": token_id
+            "contract_address": "${collectionAddress}",
+            "token_id": "${token_id}"
         }
-    }
+    }`
     const command = `nibid tx wasm execute ${contractAddress} '${buy_nft}' --from ${account} --gas auto --gas-adjustment 1.5 --gas-prices 0.025unibi`;
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error executing command: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        return stdout
-    });
+    return new Promise((resolve, reject) => {
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing command: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.error(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            resolve( `${stdout}`);
+        });
+    })
+   
 }
 

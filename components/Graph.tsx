@@ -100,8 +100,8 @@ const Graph: React.FC = () => {
   const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
   return (
-    <div className="w-full flex flex-1 items-center justify-center gap-5 flex-col bg-gray-50 ring-1 ring-gray-200 rounded-lg shadow-md dark:bg-gray-800 p-3 md:p-5">
-      <div className="flex justify-between mb-5">
+    <div className="w-full flex flex-1 items-center justify-center gap-5 flex-col bg-jacarta-200 rounded-lg shadow-md dark:bg-jacarta-400 p-3 md:p-5">
+      <div className="flex justify-between mb-2">
         <h5 className="text-xl font-semibold leading-none text-gray-800 dark:text-white pe-1">Sales Analysis</h5>
       </div>
       {typeof window !== 'undefined' && (

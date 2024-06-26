@@ -38,7 +38,7 @@ const CategoryItem = () => {
           <article key={id}>
             <div className="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 rounded-2.5xl block border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
               <figure className="relative">
-                <Link href={`/item/${itemLink}`}>
+                <Link href={`/productInfo`}>
                   <span>
                     <img
                       src={image}
@@ -52,7 +52,7 @@ const CategoryItem = () => {
 
                 <div className="absolute left-3 -bottom-3">
                   <div className="flex -space-x-2">
-                    <Link href={`/item/${itemLink}`}>
+                    <Link href={`/productInfo`}>
                       <span>
                         <Tippy content={<span>creator: {creator.name}</span>}>
                           <img
@@ -63,7 +63,7 @@ const CategoryItem = () => {
                         </Tippy>
                       </span>
                     </Link>
-                    <Link href={`/item/${itemLink}`}>
+                    <Link href={`/productInfo`}>
                       <span>
                         <Tippy content={<span>creator: {owner.name}</span>}>
                           <img
@@ -79,7 +79,7 @@ const CategoryItem = () => {
                 </div>
               </figure>
               <div className="mt-7 flex items-center justify-between">
-                <Link href={`/item/${itemLink}`}>
+                <Link href={`/productInfo`}>
                   <span>
                     <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
                       {title}
@@ -99,14 +99,14 @@ const CategoryItem = () => {
                 </span>
               </div>
 
-              <div className="mt-8 flex items-center justify-between">
+              <div className="mt-8 flex items-center flex-1 w-full">
                 <button
                   className="text-accent font-display text-sm font-semibold"
                   onClick={() => dispatch(buyModalShow())}
                 >
                   Buy now
                 </button>
-                <Link href={`/item/${itemLink}`}>
+                {/* <Link href={`/productInfo`}>
                   <span className="group flex items-center">
                     <svg className="icon icon-history group-hover:fill-accent dark:fill-jacarta-200 fill-jacarta-500 mr-1 mb-[3px] h-4 w-4">
                       <use xlinkHref="/icons.svg#icon-history"></use>
@@ -115,7 +115,7 @@ const CategoryItem = () => {
                       View History
                     </span>
                   </span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </article>

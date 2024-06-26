@@ -195,7 +195,7 @@ const Collection_category_filter = () => {
 					{/* <!-- Category --> */}
 					<Recently_added_dropdown data={categoryText} dropdownFor="category" />
 
-					{/* <!-- Properties --> */}
+					{/* <!-- Properties -->
 					<div className="my-1 mr-2.5">
 						<button
 							className="group dropdown-toggle dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
@@ -215,7 +215,7 @@ const Collection_category_filter = () => {
 						</button>
 
 						{/* <!-- Properties Modal --> */}
-						<div
+						{/* <div
 							className={propertiesModal ? 'modal fade show block' : 'modal fade'}
 							id="propertiesModal"
 						>
@@ -244,7 +244,7 @@ const Collection_category_filter = () => {
 									</div>
 
 									{/* <!-- Body --> */}
-									<div className="modal-body">
+									{/* <div className="modal-body">
 										<div className="accordion" id="accordionProps">
 											<div className="accordion-item dark:border-jacarta-600 border-jacarta-100 border-b">
 												<Accordion>
@@ -294,10 +294,10 @@ const Collection_category_filter = () => {
 												</Accordion>
 											</div>
 										</div>
-									</div>
+									</div> */}
 									{/* <!-- end body --> */}
 
-									<div className="modal-footer">
+									{/* <div className="modal-footer">
 										<div className="flex items-center justify-center space-x-4">
 											<button
 												type="button"
@@ -312,12 +312,12 @@ const Collection_category_filter = () => {
 												Apply
 											</button>
 										</div>
-									</div>
-								</div>
+									</div> */}
+								{/* </div> 
 							</div>
-						</div>
+						</div> */}
 						{/* <!-- end properties modal --> */}
-
+{/* 
 						<div
 							className="dropdown-menu dark:bg-jacarta-800 z-10 hidden min-w-[220px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl"
 							aria-labelledby="propertiesFilter"
@@ -391,7 +391,7 @@ const Collection_category_filter = () => {
 								</li>
 							</ul>
 						</div>
-					</div>
+					</div>  */}
 
 					{/* <!-- Sale Type --> */}
 					<Recently_added_dropdown data={saleTypeText} dropdownFor="sale-type" />

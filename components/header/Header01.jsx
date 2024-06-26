@@ -10,7 +10,7 @@ import {
   isParentPageActive,
 } from "../../utils/daynamicNavigation";
 import { useEffect, useState } from "react";
-import WalletButton from "../wallet-btn/WalletButton";
+import ConnectWalletBtn from "../ConnectWalletBtn";
 
 export default function Header01() {
   const [toggle, setToggle] = useState(false);
@@ -459,30 +459,27 @@ export default function Header01() {
               <ul className="flex flex-col lg:flex-row">
                 {/* home */}
                 <li className="js-nav-dropdown group relative">
-                  <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
-                    <span
-                      className={
-                        isParentPageActive(home.pages, route.asPath)
-                          ? "text-accent  dark:text-accent"
-                          : ""
-                      }
-                    >
-                      Home
-                    </span>
-                    <i className="lg:hidden">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={24}
-                        height={24}
-                        className="h-4 w-4 dark:fill-white"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                      </svg>
-                    </i>
-                  </button>
-                  <ul className="dropdown-menu dark:bg-jacarta-800 left-0 top-[85%] z-10 hidden min-w-[200px] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:grid lg:translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative">
+                  <Link href={"/"}>
+                    <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
+                      <span
+                        >
+                        Home
+                      </span>
+                      <i className="lg:hidden">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width={24}
+                          height={24}
+                          className="h-4 w-4 dark:fill-white"
+                        >
+                          <path fill="none" d="M0 0h24v24H0z" />
+                          <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
+                        </svg>
+                      </i>
+                    </button>
+                  </Link>
+                  {/* <ul className="dropdown-menu dark:bg-jacarta-800 left-0 top-[85%] z-10 hidden min-w-[200px] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:grid lg:translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative">
                     {home?.pages?.map((page) => (
                       <li key={page.id}>
                         <Link href={page.path}>
@@ -505,11 +502,11 @@ export default function Header01() {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
 
                 {/* page */}
-                <li className="js-nav-dropdown group relative">
+                {/* <li className="js-nav-dropdown group relative">
                   <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
                     <span
                       className={
@@ -557,34 +554,32 @@ export default function Header01() {
                       </li>
                     ))}
                   </ul>
-                </li>
+                </li> */}
 
                 {/* explore */}
                 <li className="js-nav-dropdown nav-item dropdown group relative">
-                  <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
-                    <span
-                      className={
-                        isParentPageActive(explore.pages, route.asPath)
-                          ? "text-accent dark:text-accent"
-                          : ""
-                      }
-                    >
-                      Explore
-                    </span>
-                    <i className="lg:hidden">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={24}
-                        height={24}
-                        className="h-4 w-4 dark:fill-white"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-                      </svg>
-                    </i>
-                  </button>
-                  <ul
+                  <Link href="/marketplace">
+                    <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
+                      <span
+                        href="/marketplace"
+                        >
+                        Explore
+                      </span>
+                      <i className="lg:hidden">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width={24}
+                          height={24}
+                          className="h-4 w-4 dark:fill-white"
+                        >
+                          <path fill="none" d="M0 0h24v24H0z" />
+                          <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
+                        </svg>
+                      </i>
+                    </button>
+                  </Link>
+                  {/* <ul
                     className="dropdown-menu dark:bg-jacarta-800 -left-6 top-[85%] z-10 hidden grid-flow-col grid-rows-5 gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-5 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative"
                     aria-labelledby="navDropdown-1"
                   >
@@ -602,11 +597,11 @@ export default function Header01() {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </li>
 
                 {/* resource */}
-                <li className="js-nav-dropdown group relative">
+                {/* <li className="js-nav-dropdown group relative">
                   <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
                     <span
                       className={
@@ -652,19 +647,14 @@ export default function Header01() {
                       </li>
                     ))}
                   </ul>
-                </li>
+                </li> */}
 
                 {/* create */}
                 <li className="group">
                   <Link href="/create">
                     <span>
                       <button className="text-jacarta-700 font-display hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5">
-                        <span
-                          className={
-                            isChildrenPageActive(route.asPath, "/create")
-                              ? "text-accent dark:text-accent"
-                              : ""
-                          }
+                        <span 
                         >
                           Create
                         </span>
@@ -677,7 +667,7 @@ export default function Header01() {
             {/* End menu for desktop */}
 
             <div className="ml-8 hidden items-center lg:flex xl:ml-12">
-              <WalletButton />
+              <ConnectWalletBtn />
               {/* End metamask Wallet */}
 
               <div className="js-nav-dropdown group-dropdown relative">

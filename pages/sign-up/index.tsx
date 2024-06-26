@@ -1,7 +1,21 @@
 export default function SignUp(){
     return(
-        <section className="relative py-20">
-            <div className="container">
+        <section className="relative ">
+            <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+                <img
+                    className="h-full w-full"
+                    src="/images/gradient.jpg"
+                    alt="gradient"
+                />
+                </picture>
+                <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
+                <img
+                    className="h-full w-full"
+                    src="/images/gradient_dark.jpg"
+                    alt="gradient dark"
+                />
+            </picture>
+            <div className="container py-20">
                 <h1 className="font-display text-jacarta-700 py-10 text-center text-4xl font-medium dark:text-white">
                     Sign Up
                 </h1>

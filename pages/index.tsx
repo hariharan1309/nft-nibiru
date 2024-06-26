@@ -18,7 +18,6 @@ const Home_4 = () => {
       <Hero_4 />
       <CoverflowCarousel />
       <Top_collection />
-
       <Feature_collections />
       <Footer />
     </>

@@ -34,7 +34,6 @@ const Footer = () => {
                 Create, sell and collect truly rare digital artworks. Powered by
                 blockchain technology.
               </p>
-
               {/* <!-- Socials --> */}
               <div className="flex space-x-5">
                 {socialIcons.map((item) => {

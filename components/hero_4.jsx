@@ -5,7 +5,20 @@ const Hero_4 = () => {
     <>
       {/* <!-- Hero --> */}
       <section className="hero relative py-20 md:pt-32">
-
+        <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 dark:hidden">
+            <img
+              className="h-full w-full"
+              src="/images/gradient.jpg"
+              alt="gradient"
+            />
+          </picture>
+          <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
+            <img
+              className="h-full w-full"
+              src="/images/gradient_dark.jpg"
+              alt="gradient dark"
+            />
+          </picture>
         <div className="container">
           <div className="mx-auto max-w-2xl pt-24 text-center">
             <h1 className="mb-10 font-display text-5xl text-jacarta-700 dark:text-white lg:text-6xl xl:text-7xl">

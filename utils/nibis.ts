@@ -36,6 +36,7 @@ export function mintNft(params: MintCommandParams): void {
       return;
     }
     console.log(`stdout: ${stdout}`);
+    return stdout
   });
 }
 
@@ -65,6 +66,7 @@ export function approve(params: ApproveCommandParams): void {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        return stdout
     });
 }
 
@@ -105,6 +107,7 @@ export function list_nft(params: ListNFTParams): void {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        return stdout
     });
 }
 
@@ -132,6 +135,7 @@ export function listing_nft(params: ListingNftParams): void {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        return stdout
     });
 }
 
@@ -161,6 +165,7 @@ export function buy_nft(params: BuyNftParams): void {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        return stdout
     });
 }
 
